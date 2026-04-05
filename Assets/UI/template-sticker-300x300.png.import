@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df4t8175t18rn"
-path="res://.godot/imported/5006e789-9ef6-4974-950b-1e10d71d31d9.png-36bf200aff920b00e06de6bbb1589e9d.ctex"
+uid="uid://d3hqyips3km7v"
+path="res://.godot/imported/template-sticker-300x300.png-b332ca5ad4b780b24a1f26ec26e8e3b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Room/5006e789-9ef6-4974-950b-1e10d71d31d9.png"
-dest_files=["res://.godot/imported/5006e789-9ef6-4974-950b-1e10d71d31d9.png-36bf200aff920b00e06de6bbb1589e9d.ctex"]
+source_file="res://Assets/UI/template-sticker-300x300.png"
+dest_files=["res://.godot/imported/template-sticker-300x300.png-b332ca5ad4b780b24a1f26ec26e8e3b7.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr8m2fy1ihc5o"
-path="res://.godot/imported/download (4).png-4a18ae8c6fbef4c1c9e1fee0f1dab1fc.ctex"
+uid="uid://hwgkky4skhy1"
+path="res://.godot/imported/IdleAnimation.png-d75dac2b3bc2e547d8430ce617ae19f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://download (4).png"
-dest_files=["res://.godot/imported/download (4).png-4a18ae8c6fbef4c1c9e1fee0f1dab1fc.ctex"]
+source_file="res://Assets/LivingThings/Payaso/IdleAnimation.png"
+dest_files=["res://.godot/imported/IdleAnimation.png-d75dac2b3bc2e547d8430ce617ae19f8.ctex"]
 
 [params]
 

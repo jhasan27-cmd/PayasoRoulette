@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dotxh1pe74wpt"
-path="res://.godot/imported/IMG_1139.jpg-5e1117dda7c5eed5857e0e7287059cc4.ctex"
+uid="uid://b0oobws00bepi"
+path="res://.godot/imported/BaseOverlay.png-f975d430368415ecb95f8fe9720928da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/LivingThings/IMG_1139.jpg"
-dest_files=["res://.godot/imported/IMG_1139.jpg-5e1117dda7c5eed5857e0e7287059cc4.ctex"]
+source_file="res://Cards/Base/BaseOverlay.png"
+dest_files=["res://.godot/imported/BaseOverlay.png-f975d430368415ecb95f8fe9720928da.ctex"]
 
 [params]
 

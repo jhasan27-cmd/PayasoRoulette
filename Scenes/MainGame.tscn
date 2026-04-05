@@ -1,0 +1,474 @@
+[gd_scene load_steps=42 format=3 uid="uid://do5fbje4wxs6f"]
+
+[ext_resource type="Script" uid="uid://d2fmyw0ok5ea2" path="res://Scripts/global.gd" id="1_jn25s"]
+[ext_resource type="Texture2D" uid="uid://dufyotfxuvqfk" path="res://Assets/LivingThings/Payaso/PayasoStillIdle.png" id="2_glaac"]
+[ext_resource type="Texture2D" uid="uid://hwgkky4skhy1" path="res://Assets/LivingThings/Payaso/IdleAnimation.png" id="3_7p2u3"]
+[ext_resource type="Script" uid="uid://bblp42serhi2u" path="res://Scripts/TestAccessScript.gd" id="4_him8o"]
+[ext_resource type="Texture2D" uid="uid://d3hqyips3km7v" path="res://Assets/UI/template-sticker-300x300.png" id="5_fgk2h"]
+[ext_resource type="FontFile" uid="uid://d0dcujbarhphq" path="res://PixelOperator8.ttf" id="6_wn26v"]
+[ext_resource type="Script" uid="uid://co6kagb1iji4p" path="res://Scripts/ThoughtCounter.gd" id="7_cmrup"]
+[ext_resource type="Texture2D" uid="uid://rv3kl6iqfbs5" path="res://Assets/icon.svg" id="8_im1vy"]
+[ext_resource type="Script" uid="uid://0th5fxa7ityf" path="res://Scripts/cardManager.gd" id="9_yy0n7"]
+[ext_resource type="Texture2D" uid="uid://idvt77wcre1j" path="res://Cards/Base/CardAnimatedBase.png" id="10_0wdc3"]
+[ext_resource type="Texture2D" uid="uid://b3wswb3iibab2" path="res://Cards/LostNose/1/Icon.png" id="11_w42fa"]
+[ext_resource type="Texture2D" uid="uid://b0oobws00bepi" path="res://Cards/Base/BaseOverlay.png" id="12_upseh"]
+[ext_resource type="Texture2D" uid="uid://o7136sbtyj1g" path="res://Cards/LostNose/1/Title.png" id="13_si6xw"]
+[ext_resource type="Texture2D" uid="uid://bjva1vsu7fsqm" path="res://Cards/LostNose/1/Text.png" id="14_1r7st"]
+[ext_resource type="Texture2D" uid="uid://dra3mm7ir8373" path="res://Assets/Room/Table.png" id="15_o6tew"]
+[ext_resource type="Texture2D" uid="uid://qlbko5rc3aog" path="res://Assets/Room/Lighting.png" id="16_3ijh3"]
+[ext_resource type="Texture2D" uid="uid://byxl51mwnyi6m" path="res://Assets/Room/Background.jpg" id="17_fto8l"]
+[ext_resource type="Texture2D" uid="uid://ous3pwmdagee" path="res://Assets/Room/GreenBGAddition.png" id="18_gskau"]
+[ext_resource type="Texture2D" uid="uid://i1hv8re6x5nt" path="res://Assets/Room/BrownBGAddition.png" id="19_ny3r6"]
+[ext_resource type="Texture2D" uid="uid://df4t8175t18rn" path="res://Assets/Room/OpponentTable.png" id="20_m1lyq"]
+[ext_resource type="Texture2D" uid="uid://sw1ewmcen4qk" path="res://My20first20FlipaClip-ezgif.com-gif-to-sprite-converter.png" id="21_76w8d"]
+[ext_resource type="Script" uid="uid://ctgooqd6xxg1q" path="res://Scripts/CardHover.gd" id="22_glaac"]
+
+[sub_resource type="Animation" id="Animation_ma1re"]
+resource_name = "CamToCard"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 48), Vector2(32, 161)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Cards/P1Cards:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.46666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 324), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Cards/P2Cards:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -552), Vector2(0, -7)]
+}
+
+[sub_resource type="Animation" id="Animation_401ut"]
+resource_name = "CardToCam"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(29, 162), Vector2(0, 48)]
+}
+
+[sub_resource type="Animation" id="Animation_yphxy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 48)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Cards/P1Cards:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 312)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Cards/P2Cards:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -552)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ma1re"]
+_data = {
+&"CamToCard": SubResource("Animation_ma1re"),
+&"CardToCam": SubResource("Animation_401ut"),
+&"RESET": SubResource("Animation_yphxy")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtrx8"]
+atlas = ExtResource("3_7p2u3")
+region = Rect2(0, 0, 292, 285)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_led80"]
+atlas = ExtResource("3_7p2u3")
+region = Rect2(292, 0, 292, 285)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi4js"]
+atlas = ExtResource("3_7p2u3")
+region = Rect2(584, 0, 292, 285)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v3hs3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtrx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_led80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi4js")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3vwv"]
+atlas = ExtResource("10_0wdc3")
+region = Rect2(0, 0, 308, 408)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_401ut"]
+atlas = ExtResource("10_0wdc3")
+region = Rect2(308, 0, 308, 408)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jn25s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3vwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_401ut")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yphxy"]
+atlas = ExtResource("12_upseh")
+region = Rect2(0, 0, 308, 408)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma1re"]
+atlas = ExtResource("12_upseh")
+region = Rect2(308, 0, 308, 408)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_glaac"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yphxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ma1re")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8dnxm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0yo1"]
+atlas = ExtResource("21_76w8d")
+region = Rect2(0, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6brkw"]
+atlas = ExtResource("21_76w8d")
+region = Rect2(1280, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgwad"]
+atlas = ExtResource("21_76w8d")
+region = Rect2(2560, 0, 1280, 720)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0igvr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0yo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6brkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgwad")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(1, 1)
+script = ExtResource("1_jn25s")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 4096
+position = Vector2(0, 48)
+scale = Vector2(2, 2)
+
+[node name="CamControler" type="AnimationPlayer" parent="Camera2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_ma1re")
+}
+autoplay = "CamToCard"
+
+[node name="OtherGuy" type="Sprite2D" parent="."]
+visible = false
+z_index = 1498
+position = Vector2(-4, 82.00001)
+scale = Vector2(0.5200006, 0.5200006)
+texture = ExtResource("2_glaac")
+
+[node name="TheDarkness" type="DirectionalLight2D" parent="."]
+color = Color(0, 0, 0, 1)
+energy = 0.42
+blend_mode = 2
+
+[node name="Payaso" type="AnimatedSprite2D" parent="."]
+z_index = 1502
+position = Vector2(33, 197)
+sprite_frames = SubResource("SpriteFrames_v3hs3")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.54645914
+script = ExtResource("4_him8o")
+
+[node name="ThoughtBubble" type="Sprite2D" parent="Payaso"]
+position = Vector2(107, -82)
+scale = Vector2(0.4399991, 0.4399991)
+texture = ExtResource("5_fgk2h")
+flip_h = true
+
+[node name="ThoughtCounter" type="Label" parent="Payaso/ThoughtBubble"]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -352.27313
+offset_top = -306.81848
+offset_right = -312.27313
+offset_bottom = -257.81848
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(9.454557, 9.454557)
+theme_override_fonts/font = ExtResource("6_wn26v")
+text = "1
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_cmrup")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Button2" type="Button" parent="Node"]
+z_index = 2000
+offset_left = -565.0
+offset_top = -199.0
+offset_right = -429.0
+offset_bottom = -63.0
+icon = ExtResource("8_im1vy")
+
+[node name="Cards" type="CanvasLayer" parent="."]
+process_priority = 1
+follow_viewport_enabled = true
+
+[node name="P1Cards" type="Node2D" parent="Cards"]
+position = Vector2(0, 312)
+script = ExtResource("9_yy0n7")
+
+[node name="BaseCard" type="AnimatedSprite2D" parent="Cards/P1Cards"]
+z_index = 2500
+position = Vector2(28, 125)
+scale = Vector2(0.393198, 0.393198)
+sprite_frames = SubResource("SpriteFrames_jn25s")
+autoplay = "default"
+
+[node name="Image" type="Sprite2D" parent="Cards/P1Cards/BaseCard"]
+position = Vector2(-15, -55)
+scale = Vector2(0.59999996, 0.67999506)
+texture = ExtResource("11_w42fa")
+
+[node name="Overlay" type="AnimatedSprite2D" parent="Cards/P1Cards/BaseCard"]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_glaac")
+autoplay = "default"
+
+[node name="Title" type="Sprite2D" parent="Cards/P1Cards/BaseCard"]
+position = Vector2(-15, -135)
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("13_si6xw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Cards/P1Cards/BaseCard"]
+position = Vector2(-17.000002, 77.00001)
+scale = Vector2(0.56079626, 0.56079626)
+texture = ExtResource("14_1r7st")
+
+[node name="Type" type="Label" parent="Cards/P1Cards/BaseCard"]
+visible = false
+offset_left = -76.29744
+offset_top = -839.2719
+offset_right = -36.29744
+offset_bottom = -816.2719
+
+[node name="ClickDetector" type="Button" parent="Cards/P1Cards/BaseCard"]
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+y_sort_enabled = true
+offset_left = -137.33539
+offset_top = -157.68137
+offset_right = -129.33539
+offset_bottom = -149.68137
+scale = Vector2(30.501669, 40.97986)
+mouse_filter = 1
+script = ExtResource("22_glaac")
+
+[node name="P2Cards" type="Node2D" parent="Cards"]
+position = Vector2(0, -552)
+script = ExtResource("9_yy0n7")
+
+[node name="TheRoom" type="Node2D" parent="."]
+
+[node name="Table" type="StaticBody2D" parent="TheRoom"]
+physics_material_override = SubResource("PhysicsMaterial_8dnxm")
+
+[node name="TableSprite" type="Sprite2D" parent="TheRoom/Table"]
+z_index = 2001
+position = Vector2(-3.9999998, 6.999999)
+scale = Vector2(3, 2.862677)
+texture = ExtResource("15_o6tew")
+
+[node name="Layer1" type="StaticBody2D" parent="TheRoom/Table"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TheRoom/Table/Layer1"]
+position = Vector2(0, 375)
+scale = Vector2(94.87999, 25.079994)
+polygon = PackedVector2Array(-4.8376904, -37.639565, -9.643762, 2.4322176, 9.822935, 2.1929827, 4.5952787, -37.200966, 4.56366, -2.6714516, -4.763913, -2.551835)
+
+[node name="Layer2" type="StaticBody2D" parent="TheRoom/Table"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TheRoom/Table/Layer2"]
+position = Vector2(0, 375)
+scale = Vector2(94.87999, 25.079994)
+polygon = PackedVector2Array(-5.3225136, -1.9537487, -5.41737, -37.639565, -9.643762, 2.4322176, 9.822935, 2.1929827, 5.1749587, -38.676247, 5.080102, -2.2328558)
+
+[node name="TableOverlay" type="Sprite2D" parent="TheRoom/Table"]
+visible = false
+z_index = 2000
+position = Vector2(0, -1)
+scale = Vector2(3, 3)
+texture = ExtResource("15_o6tew")
+
+[node name="PointLight2D2" type="PointLight2D" parent="TheRoom"]
+position = Vector2(8, 245.99998)
+scale = Vector2(2.1599982, 2.5467615)
+energy = 6.14
+texture = ExtResource("16_3ijh3")
+
+[node name="BackGround" type="Sprite2D" parent="TheRoom"]
+texture = ExtResource("17_fto8l")
+
+[node name="GreenLightHider" type="Sprite2D" parent="TheRoom"]
+z_index = 1500
+position = Vector2(-7, 550)
+scale = Vector2(2.618156, 1.16)
+texture = ExtResource("18_gskau")
+
+[node name="Other LightHider" type="Sprite2D" parent="TheRoom"]
+z_index = 1500
+position = Vector2(7, 530)
+scale = Vector2(0.749, 0.225)
+texture = ExtResource("19_ny3r6")
+
+[node name="OpponentTableOverLay" type="Sprite2D" parent="TheRoom"]
+z_index = 1499
+position = Vector2(-10, 152)
+scale = Vector2(0.8000003, 0.8000003)
+texture = ExtResource("20_m1lyq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 1500
+sprite_frames = SubResource("SpriteFrames_0igvr")
+autoplay = "default"
+frame_progress = 0.67479306
+
+[node name="ReplicatedStorage" type="Node2D" parent="."]
+
+[connection signal="ThoughtChanged" from="." to="Payaso/ThoughtBubble/ThoughtCounter" method="_on_node_2d_thought_changed"]
+[connection signal="child_order_changed" from="Cards/P1Cards" to="Cards/P1Cards" method="_on_child_order_changed"]
+[connection signal="mouse_entered" from="Cards/P1Cards/BaseCard/ClickDetector" to="Cards/P1Cards/BaseCard/ClickDetector" method="_on_mouse_entered"]
+[connection signal="child_order_changed" from="Cards/P2Cards" to="Cards/P2Cards" method="_on_child_order_changed"]
