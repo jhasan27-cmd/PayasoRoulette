@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3wswb3iibab2"
-path="res://.godot/imported/Icon.png-b5c9f3ba08c86a1a2b9e8e8de0dbe509.ctex"
+uid="uid://c36kyorayner3"
+path="res://.godot/imported/card.png-873adaab0053066e474fb53c634affda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cards/LostNose/1/Icon.png"
-dest_files=["res://.godot/imported/Icon.png-b5c9f3ba08c86a1a2b9e8e8de0dbe509.ctex"]
+source_file="res://Cards/Quieronino/1/card.png"
+dest_files=["res://.godot/imported/card.png-873adaab0053066e474fb53c634affda.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjva1vsu7fsqm"
-path="res://.godot/imported/Text.png-8febb3b3818044db162dee35cc733742.ctex"
+uid="uid://cl1p82aspjyqf"
+path="res://.godot/imported/card.png-56661ce2813c4f5fb5609bccdf97584d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cards/LostNose/1/Text.png"
-dest_files=["res://.godot/imported/Text.png-8febb3b3818044db162dee35cc733742.ctex"]
+source_file="res://Cards/Leftovers/1/card.png"
+dest_files=["res://.godot/imported/card.png-56661ce2813c4f5fb5609bccdf97584d.ctex"]
 
 [params]
 

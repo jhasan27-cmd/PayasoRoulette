@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://do5fbje4wxs6f"]
+[gd_scene load_steps=39 format=3 uid="uid://do5fbje4wxs6f"]
 
 [ext_resource type="Script" uid="uid://d2fmyw0ok5ea2" path="res://Scripts/global.gd" id="1_jn25s"]
 [ext_resource type="Texture2D" uid="uid://dufyotfxuvqfk" path="res://Assets/LivingThings/Payaso/PayasoStillIdle.png" id="2_glaac"]
@@ -9,19 +9,17 @@
 [ext_resource type="Script" uid="uid://co6kagb1iji4p" path="res://Scripts/ThoughtCounter.gd" id="7_cmrup"]
 [ext_resource type="Texture2D" uid="uid://rv3kl6iqfbs5" path="res://Assets/icon.svg" id="8_im1vy"]
 [ext_resource type="Script" uid="uid://0th5fxa7ityf" path="res://Scripts/cardManager.gd" id="9_yy0n7"]
-[ext_resource type="Texture2D" uid="uid://idvt77wcre1j" path="res://Cards/Base/CardAnimatedBase.png" id="10_0wdc3"]
-[ext_resource type="Texture2D" uid="uid://b3wswb3iibab2" path="res://Cards/LostNose/1/Icon.png" id="11_w42fa"]
 [ext_resource type="Texture2D" uid="uid://b0oobws00bepi" path="res://Cards/Base/BaseOverlay.png" id="12_upseh"]
-[ext_resource type="Texture2D" uid="uid://o7136sbtyj1g" path="res://Cards/LostNose/1/Title.png" id="13_si6xw"]
-[ext_resource type="Texture2D" uid="uid://bjva1vsu7fsqm" path="res://Cards/LostNose/1/Text.png" id="14_1r7st"]
 [ext_resource type="Texture2D" uid="uid://dra3mm7ir8373" path="res://Assets/Room/Table.png" id="15_o6tew"]
 [ext_resource type="Texture2D" uid="uid://qlbko5rc3aog" path="res://Assets/Room/Lighting.png" id="16_3ijh3"]
 [ext_resource type="Texture2D" uid="uid://byxl51mwnyi6m" path="res://Assets/Room/Background.jpg" id="17_fto8l"]
+[ext_resource type="Texture2D" uid="uid://yntwjmgbv0rq" path="res://Cards/Distract/2/card.png" id="18_ev6kq"]
 [ext_resource type="Texture2D" uid="uid://ous3pwmdagee" path="res://Assets/Room/GreenBGAddition.png" id="18_gskau"]
 [ext_resource type="Texture2D" uid="uid://i1hv8re6x5nt" path="res://Assets/Room/BrownBGAddition.png" id="19_ny3r6"]
 [ext_resource type="Texture2D" uid="uid://df4t8175t18rn" path="res://Assets/Room/OpponentTable.png" id="20_m1lyq"]
 [ext_resource type="Texture2D" uid="uid://sw1ewmcen4qk" path="res://My20first20FlipaClip-ezgif.com-gif-to-sprite-converter.png" id="21_76w8d"]
 [ext_resource type="Script" uid="uid://ctgooqd6xxg1q" path="res://Scripts/CardHover.gd" id="22_glaac"]
+[ext_resource type="Script" uid="uid://cntn01wncqcke" path="res://Scripts/replicated_storage.gd" id="23_7p2u3"]
 
 [sub_resource type="Animation" id="Animation_ma1re"]
 resource_name = "CamToCard"
@@ -190,22 +188,31 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o3vwv"]
-atlas = ExtResource("10_0wdc3")
-region = Rect2(0, 0, 308, 408)
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8dnxm"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_401ut"]
-atlas = ExtResource("10_0wdc3")
-region = Rect2(308, 0, 308, 408)
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0yo1"]
+atlas = ExtResource("21_76w8d")
+region = Rect2(0, 0, 1280, 720)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_jn25s"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6brkw"]
+atlas = ExtResource("21_76w8d")
+region = Rect2(1280, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgwad"]
+atlas = ExtResource("21_76w8d")
+region = Rect2(2560, 0, 1280, 720)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0igvr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o3vwv")
+"texture": SubResource("AtlasTexture_t0yo1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_401ut")
+"texture": SubResource("AtlasTexture_6brkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgwad")
 }],
 "loop": true,
 "name": &"default",
@@ -234,31 +241,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8dnxm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jn25s"]
+atlas = ExtResource("12_upseh")
+region = Rect2(308, 0, 308, 408)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t0yo1"]
-atlas = ExtResource("21_76w8d")
-region = Rect2(0, 0, 1280, 720)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6brkw"]
-atlas = ExtResource("21_76w8d")
-region = Rect2(1280, 0, 1280, 720)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cgwad"]
-atlas = ExtResource("21_76w8d")
-region = Rect2(2560, 0, 1280, 720)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0igvr"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_7p2u3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t0yo1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6brkw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cgwad")
+"texture": SubResource("AtlasTexture_jn25s")
 }],
 "loop": true,
 "name": &"default",
@@ -346,52 +337,6 @@ follow_viewport_enabled = true
 position = Vector2(0, 312)
 script = ExtResource("9_yy0n7")
 
-[node name="BaseCard" type="AnimatedSprite2D" parent="Cards/P1Cards"]
-z_index = 2500
-position = Vector2(28, 125)
-scale = Vector2(0.393198, 0.393198)
-sprite_frames = SubResource("SpriteFrames_jn25s")
-autoplay = "default"
-
-[node name="Image" type="Sprite2D" parent="Cards/P1Cards/BaseCard"]
-position = Vector2(-15, -55)
-scale = Vector2(0.59999996, 0.67999506)
-texture = ExtResource("11_w42fa")
-
-[node name="Overlay" type="AnimatedSprite2D" parent="Cards/P1Cards/BaseCard"]
-z_index = 1
-sprite_frames = SubResource("SpriteFrames_glaac")
-autoplay = "default"
-
-[node name="Title" type="Sprite2D" parent="Cards/P1Cards/BaseCard"]
-position = Vector2(-15, -135)
-scale = Vector2(0.72, 0.72)
-texture = ExtResource("13_si6xw")
-
-[node name="Sprite2D" type="Sprite2D" parent="Cards/P1Cards/BaseCard"]
-position = Vector2(-17.000002, 77.00001)
-scale = Vector2(0.56079626, 0.56079626)
-texture = ExtResource("14_1r7st")
-
-[node name="Type" type="Label" parent="Cards/P1Cards/BaseCard"]
-visible = false
-offset_left = -76.29744
-offset_top = -839.2719
-offset_right = -36.29744
-offset_bottom = -816.2719
-
-[node name="ClickDetector" type="Button" parent="Cards/P1Cards/BaseCard"]
-modulate = Color(1, 1, 1, 0)
-z_index = 10
-y_sort_enabled = true
-offset_left = -137.33539
-offset_top = -157.68137
-offset_right = -129.33539
-offset_bottom = -149.68137
-scale = Vector2(30.501669, 40.97986)
-mouse_filter = 1
-script = ExtResource("22_glaac")
-
 [node name="P2Cards" type="Node2D" parent="Cards"]
 position = Vector2(0, -552)
 script = ExtResource("9_yy0n7")
@@ -467,8 +412,51 @@ autoplay = "default"
 frame_progress = 0.67479306
 
 [node name="ReplicatedStorage" type="Node2D" parent="."]
+script = ExtResource("23_7p2u3")
+
+[node name="BaseCard" type="Sprite2D" parent="ReplicatedStorage"]
+visible = false
+z_index = 2500
+position = Vector2(132, 438)
+scale = Vector2(0.064, 0.064)
+texture = ExtResource("18_ev6kq")
+region_enabled = true
+region_rect = Rect2(6, -2, 1402, 2002)
+region_filter_clip_enabled = true
+
+[node name="Type" type="Label" parent="ReplicatedStorage/BaseCard"]
+visible = false
+offset_left = -2076.923
+offset_top = -5107.6934
+offset_right = -2036.9231
+offset_bottom = -5084.6934
+
+[node name="ClickDetector" type="Button" parent="ReplicatedStorage/BaseCard"]
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+y_sort_enabled = true
+offset_left = -692.3082
+offset_top = -984.61523
+offset_right = -684.3082
+offset_bottom = -976.61523
+scale = Vector2(173.27087, 247.56357)
+mouse_filter = 1
+script = ExtResource("22_glaac")
+
+[node name="Overlay" type="AnimatedSprite2D" parent="ReplicatedStorage/BaseCard"]
+z_index = 1
+position = Vector2(107.692505, -30.769043)
+scale = Vector2(5.534, 6.16)
+sprite_frames = SubResource("SpriteFrames_glaac")
+autoplay = "default"
+frame_progress = 0.28665644
+
+[node name="StaticOverlay" type="AnimatedSprite2D" parent="ReplicatedStorage/BaseCard"]
+position = Vector2(109.375, -93.749985)
+scale = Vector2(5.625, 5.625)
+sprite_frames = SubResource("SpriteFrames_7p2u3")
 
 [connection signal="ThoughtChanged" from="." to="Payaso/ThoughtBubble/ThoughtCounter" method="_on_node_2d_thought_changed"]
 [connection signal="child_order_changed" from="Cards/P1Cards" to="Cards/P1Cards" method="_on_child_order_changed"]
-[connection signal="mouse_entered" from="Cards/P1Cards/BaseCard/ClickDetector" to="Cards/P1Cards/BaseCard/ClickDetector" method="_on_mouse_entered"]
 [connection signal="child_order_changed" from="Cards/P2Cards" to="Cards/P2Cards" method="_on_child_order_changed"]
+[connection signal="mouse_entered" from="ReplicatedStorage/BaseCard/ClickDetector" to="ReplicatedStorage/BaseCard/ClickDetector" method="_on_mouse_entered"]
