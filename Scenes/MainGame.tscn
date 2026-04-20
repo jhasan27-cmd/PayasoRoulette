@@ -188,37 +188,6 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8dnxm"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t0yo1"]
-atlas = ExtResource("21_76w8d")
-region = Rect2(0, 0, 1280, 720)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6brkw"]
-atlas = ExtResource("21_76w8d")
-region = Rect2(1280, 0, 1280, 720)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cgwad"]
-atlas = ExtResource("21_76w8d")
-region = Rect2(2560, 0, 1280, 720)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0igvr"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t0yo1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6brkw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cgwad")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_yphxy"]
 atlas = ExtResource("12_upseh")
 region = Rect2(0, 0, 308, 408)
@@ -256,6 +225,37 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8dnxm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0yo1"]
+atlas = ExtResource("21_76w8d")
+region = Rect2(0, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6brkw"]
+atlas = ExtResource("21_76w8d")
+region = Rect2(1280, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgwad"]
+atlas = ExtResource("21_76w8d")
+region = Rect2(2560, 0, 1280, 720)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0igvr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0yo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6brkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgwad")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(1, 1)
 script = ExtResource("1_jn25s")
@@ -269,7 +269,6 @@ scale = Vector2(2, 2)
 libraries = {
 &"": SubResource("AnimationLibrary_ma1re")
 }
-autoplay = "CamToCard"
 
 [node name="OtherGuy" type="Sprite2D" parent="."]
 visible = false
@@ -337,9 +336,107 @@ follow_viewport_enabled = true
 position = Vector2(0, 312)
 script = ExtResource("9_yy0n7")
 
+[node name="BaseCard2" type="Sprite2D" parent="Cards/P1Cards"]
+z_index = 2500
+position = Vector2(133, 330)
+scale = Vector2(0.064, 0.064)
+texture = ExtResource("18_ev6kq")
+region_enabled = true
+region_rect = Rect2(6, -2, 1402, 2002)
+region_filter_clip_enabled = true
+
+[node name="WhoAmI" type="Label" parent="Cards/P1Cards/BaseCard2"]
+visible = false
+offset_left = -2076.923
+offset_top = -5107.6934
+offset_right = -2036.9231
+offset_bottom = -5084.6934
+
+[node name="ClickDetector" type="Button" parent="Cards/P1Cards/BaseCard2"]
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+y_sort_enabled = true
+offset_left = -692.3082
+offset_top = -984.61523
+offset_right = -684.3082
+offset_bottom = -976.61523
+scale = Vector2(173.271, 406.939)
+mouse_filter = 1
+script = ExtResource("22_glaac")
+
+[node name="Overlay" type="AnimatedSprite2D" parent="Cards/P1Cards/BaseCard2"]
+z_index = 1
+position = Vector2(107.692505, -30.769043)
+scale = Vector2(5.534, 6.16)
+sprite_frames = SubResource("SpriteFrames_glaac")
+autoplay = "default"
+frame_progress = 0.28665644
+
+[node name="StaticOverlay" type="AnimatedSprite2D" parent="Cards/P1Cards/BaseCard2"]
+position = Vector2(109.375, -93.749985)
+scale = Vector2(5.625, 5.625)
+sprite_frames = SubResource("SpriteFrames_7p2u3")
+
+[node name="Owner" type="Label" parent="Cards/P1Cards/BaseCard2"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CardType" type="Label" parent="Cards/P1Cards/BaseCard2"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="P2Cards" type="Node2D" parent="Cards"]
 position = Vector2(0, -552)
 script = ExtResource("9_yy0n7")
+
+[node name="BaseCard3" type="Sprite2D" parent="Cards/P2Cards"]
+z_index = 2500
+position = Vector2(133, 991)
+scale = Vector2(0.064, 0.064)
+texture = ExtResource("18_ev6kq")
+region_enabled = true
+region_rect = Rect2(6, -2, 1402, 2002)
+region_filter_clip_enabled = true
+
+[node name="WhoAmI" type="Label" parent="Cards/P2Cards/BaseCard3"]
+visible = false
+offset_left = -2076.923
+offset_top = -5107.6934
+offset_right = -2036.9231
+offset_bottom = -5084.6934
+
+[node name="ClickDetector" type="Button" parent="Cards/P2Cards/BaseCard3"]
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+y_sort_enabled = true
+offset_left = -692.3082
+offset_top = -984.61523
+offset_right = -684.3082
+offset_bottom = -976.61523
+scale = Vector2(173.271, 406.939)
+mouse_filter = 1
+script = ExtResource("22_glaac")
+
+[node name="Overlay" type="AnimatedSprite2D" parent="Cards/P2Cards/BaseCard3"]
+z_index = 1
+position = Vector2(107.692505, -30.769043)
+scale = Vector2(5.534, 6.16)
+sprite_frames = SubResource("SpriteFrames_glaac")
+autoplay = "default"
+frame_progress = 0.28665644
+
+[node name="StaticOverlay" type="AnimatedSprite2D" parent="Cards/P2Cards/BaseCard3"]
+position = Vector2(109.375, -93.749985)
+scale = Vector2(5.625, 5.625)
+sprite_frames = SubResource("SpriteFrames_7p2u3")
+
+[node name="Owner" type="Label" parent="Cards/P2Cards/BaseCard3"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CardType" type="Label" parent="Cards/P2Cards/BaseCard3"]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="TheRoom" type="Node2D" parent="."]
 
@@ -424,7 +521,7 @@ region_enabled = true
 region_rect = Rect2(6, -2, 1402, 2002)
 region_filter_clip_enabled = true
 
-[node name="Type" type="Label" parent="ReplicatedStorage/BaseCard"]
+[node name="WhoAmI" type="Label" parent="ReplicatedStorage/BaseCard"]
 visible = false
 offset_left = -2076.923
 offset_top = -5107.6934
@@ -439,7 +536,7 @@ offset_left = -692.3082
 offset_top = -984.61523
 offset_right = -684.3082
 offset_bottom = -976.61523
-scale = Vector2(173.27087, 247.56357)
+scale = Vector2(173.271, 406.939)
 mouse_filter = 1
 script = ExtResource("22_glaac")
 
@@ -456,7 +553,17 @@ position = Vector2(109.375, -93.749985)
 scale = Vector2(5.625, 5.625)
 sprite_frames = SubResource("SpriteFrames_7p2u3")
 
+[node name="Owner" type="Label" parent="ReplicatedStorage/BaseCard"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CardType" type="Label" parent="ReplicatedStorage/BaseCard"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [connection signal="ThoughtChanged" from="." to="Payaso/ThoughtBubble/ThoughtCounter" method="_on_node_2d_thought_changed"]
 [connection signal="child_order_changed" from="Cards/P1Cards" to="Cards/P1Cards" method="_on_child_order_changed"]
+[connection signal="mouse_entered" from="Cards/P1Cards/BaseCard2/ClickDetector" to="Cards/P1Cards/BaseCard2/ClickDetector" method="_on_mouse_entered"]
 [connection signal="child_order_changed" from="Cards/P2Cards" to="Cards/P2Cards" method="_on_child_order_changed"]
+[connection signal="mouse_entered" from="Cards/P2Cards/BaseCard3/ClickDetector" to="Cards/P2Cards/BaseCard3/ClickDetector" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="ReplicatedStorage/BaseCard/ClickDetector" to="ReplicatedStorage/BaseCard/ClickDetector" method="_on_mouse_entered"]
